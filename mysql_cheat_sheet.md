@@ -70,6 +70,11 @@ DROP USER 'someuser'@'localhost';
 ```
 SYSTEM mysql -u user -p
 ```
+
+## Checking the current user
+```
+SELECT USER()
+```
 ## Exit
 
 ```sql
