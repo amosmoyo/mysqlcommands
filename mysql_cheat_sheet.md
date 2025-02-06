@@ -343,3 +343,26 @@ SELECT age, COUNT(age) FROM users WHERE age > 20 GROUP BY age;
 SELECT age, COUNT(age) FROM users GROUP BY age HAVING count(age) >=2;
 
 ```
+
+## SQL SERVER/CRAFT RESEARCH
+
+```sql
+sqlcmd -S DESKTOP-V1U1B6U\MSSQLSERVER01 -E
+sqlcmd -S DESKTOP-V1U1B6U\MSSQLSERVER01 -U amosmoyo -P password@12345
+
+QUIT/EXIT
+
+CREATE LOGIN amosmoyo WITH PASSWORD = 'password@12345';
+
+CREATE USER amosmoyo FOR LOGIN amosmoyo;
+
+ALTER ROLE db_owner ADD MEMBER amosmoyo;
+
+###CMD start and stop SQL SERVER;
+net stop MSSQL$MSSQLSERVER01
+net start MSSQL$MSSQLSERVER01
+
+string connectionString = @"Server=DESKTOP-V1U1B6U\MSSQLSERVER01;Database=master;Trusted_Connection=True;";
+string connectionString = @"Server=DESKTOP-V1U1B6U\MSSQLSERVER01;Database=Elma;User Id=amosmoyo;Password=password@12345;";
+
+````
